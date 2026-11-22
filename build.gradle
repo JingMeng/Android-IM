@@ -3,13 +3,11 @@
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.0.0'
-        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.0'
-        classpath 'com.jakewharton:butterknife-gradle-plugin:8.4.0'
+        classpath 'com.android.tools.build:gradle:8.2.1'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -17,12 +15,32 @@ buildscript {
 
 allprojects {
     repositories {
+        maven {
+            url 'https://maven.aliyun.com/repository/jcenter'
+            content {
+                includeGroup 'com.bigkoo'
+                includeGroupByRegex 'cn[.]jiguang.*'
+                includeGroup 'com.flyco.tablayout'
+                includeGroup 'com.kyleduo.switchbutton'
+                includeGroup 'com.contrarywind'
+                includeGroup 'com.google.android'
+            }
+        }
+        maven {
+            url 'https://maven.jiguang.cn/nexus/content/repositories/releases/'
+            content { includeGroupByRegex 'cn[.]jiguang.*' }
+        }
         google()
-        jcenter()
+        mavenCentral()
         maven { url "https://jitpack.io" }
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
+}
+
+tasks.withType(JavaCompile).configureEach {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }

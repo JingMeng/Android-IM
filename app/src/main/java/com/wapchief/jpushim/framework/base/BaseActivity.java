@@ -9,8 +9,8 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Message;
-import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentActivity;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
@@ -61,7 +61,7 @@ public abstract class BaseActivity extends FragmentActivity implements View.OnCl
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        BarUtils.setNavBarImmersive(this);
+        BarUtils.transparentNavBar(this);
 //        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
 //            try {
 //                Class decorViewClazz = Class.forName("com.android.internal.policy.DecorView");

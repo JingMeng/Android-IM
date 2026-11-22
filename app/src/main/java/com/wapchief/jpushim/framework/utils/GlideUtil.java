@@ -16,7 +16,7 @@ import com.bumptech.glide.request.target.Target;
 import com.bumptech.glide.request.transition.Transition;
 import com.wapchief.jpushim.R;
 
-import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 
 
 /**
@@ -97,7 +97,7 @@ public class GlideUtil {
                 .load(imgUrl)
                 .apply(new RequestOptions().error(R.drawable.icon_user))
                 .apply(RequestOptions.bitmapTransform(new MultiTransformation<Bitmap>(new CenterCrop(),
-                        new RoundedCornersTransformation(ConvertUtils.dp2px(4), 0))))
+                        new RoundedCorners(ConvertUtils.dp2px(4)))))
                 .into(imageView);
     }
 
@@ -106,7 +106,7 @@ public class GlideUtil {
                 .load(imgUrl)
                 .apply(new RequestOptions().error(resourceId))
                 .apply(RequestOptions.bitmapTransform(new MultiTransformation<Bitmap>(new CenterCrop(),
-                        new RoundedCornersTransformation(ConvertUtils.dp2px(4), 0))))
+                        new RoundedCorners(ConvertUtils.dp2px(4)))))
                 .into(imageView);
     }
 
@@ -115,7 +115,7 @@ public class GlideUtil {
                 .load(imgUrl)
                 .apply(new RequestOptions().error(errorResourceId))
                 .apply(RequestOptions.bitmapTransform(new MultiTransformation<Bitmap>(new CenterCrop(),
-                        new RoundedCornersTransformation(ConvertUtils.dp2px(cornerRadius), 0))))
+                        new RoundedCorners(ConvertUtils.dp2px(cornerRadius)))))
                 .into(imageView);
     }
 
@@ -132,7 +132,7 @@ public class GlideUtil {
                 .load(imgUrl)
                 .apply(new RequestOptions().error(R.drawable.icon_user))
                 .apply(RequestOptions.bitmapTransform(new MultiTransformation<Bitmap>(new CenterCrop(),
-                        new RoundedCornersTransformation(ConvertUtils.dp2px(cornerRadius), 0))))
+                        new RoundedCorners(ConvertUtils.dp2px(cornerRadius)))))
                 .into(imageView);
     }
 

@@ -1,7 +1,7 @@
 package com.wapchief.jpushim.fragment;
 
 
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import com.wapchief.jpushim.framework.base.BaseFragment;
 
